@@ -9,9 +9,6 @@
 <a href="https://rira.wtf"><img src="https://img.shields.io/github/languages/count/Debitable/Radix-Debitable" alt="Languages" /></a>
 <a href="https://github.com/Debitable/Radix-Debitable/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/Debitable/Radix-Debitable" /></a>
 
-<br />
-<br />
-
 Radix implementation of <b>Debitable</b> using the [Alphanet Javascript SDK](https://docs.radixdlt.com/main/scrypto/alphanet/javascript-sdk.html).
 </div>
 
