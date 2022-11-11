@@ -17,6 +17,7 @@
     "@types/node": "^18.11.9",
     "@types/qrcode": "^1.5.0",
     "grunt": "^1.5.3",
+    "grunt-contrib-uglify": "^5.2.2",
     "jquery": "^3.6.1",
     "prettier": "^2.7.1",
     "qrcode": "^1.5.1",
