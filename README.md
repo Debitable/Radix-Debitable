@@ -6,7 +6,7 @@
 
 <a href="https://github.com/Debitable/Radix-Debitable/issues"><img src="https://camo.githubusercontent.com/f5054ffcd4245c10d3ec85ef059e07aacf787b560f83ad4aec2236364437d097/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f6e747269627574696f6e732d77656c636f6d652d627269676874677265656e2e7376673f7374796c653d666c6174" alt="Contributions" /></a>
 <a href="https://github.com/Debitable/Radix-Debitable/actions"><img src="https://github.com/Debitable/Radix-Debitable/actions/workflows/npm-grunt.yml/badge.svg" alt="Node Application Test" /></a>
-<a href="https://rira.wtf"><img src="https://img.shields.io/github/languages/count/Debitable/Radix-Debitable" alt="Languages" /></a>
+<a href="https://github.com/Debitable/Radix-Debitable"><img src="https://img.shields.io/github/languages/count/Debitable/Radix-Debitable" alt="Languages" /></a>
 <a href="https://github.com/Debitable/Radix-Debitable/LICENSE"><img alt="LICENSE" src="https://img.shields.io/github/license/Debitable/Radix-Debitable" /></a>
 
 Radix implementation of <b>Debitable</b> using the [Alphanet Javascript SDK](https://docs.radixdlt.com/main/scrypto/alphanet/javascript-sdk.html).
