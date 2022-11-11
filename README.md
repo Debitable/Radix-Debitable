@@ -12,6 +12,20 @@
 Radix implementation of <b>Debitable</b> using the [Alphanet Javascript SDK](https://docs.radixdlt.com/main/scrypto/alphanet/javascript-sdk.html).
 </div>
 
+<h2>Features:</h2>
+
+- QR Code based account addresses
+- Identification Address based transfer and authentication
+- Withdraw AggieCoins
+- Deposit AggieCoins
+
+**Pending**:
+- [ ] Transaction history
+- [ ] Improved Sign-out
+- [ ] Pagination for transactions
+- [ ] Borrowing and lending features
+- [ ] Detailed testing and bug-fixes
+
 ## Pre-requisites
 1. Node >= 12.17.0
 2. The Alphanet wallet installed. Instructions [here](https://docs.radixdlt.com/main/scrypto/alphanet/wallet-extension.html)
