@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 sbor = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v0.6.0" }
 scrypto = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v0.6.0" }
+sha2 = "0.10"
 
 [dev-dependencies]
 transaction = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v0.6.0" }
