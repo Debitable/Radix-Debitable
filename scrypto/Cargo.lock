@@ -295,6 +295,7 @@ dependencies = [
  "sbor",
  "scrypto",
  "scrypto-unit",
+ "sha2 0.10.6",
  "transaction",
 ]
 
