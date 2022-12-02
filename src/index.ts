@@ -11,7 +11,7 @@ const transactionApi = new TransactionApi()
 // Global states
 let accountAddress: string // User account address
 let componentAddress: string  // Bank component address
-let packageAddress = "package_tdx_a_1q824gavtfsm0ktdj9z8w5h20wjlx2pdxy89trmgmkfdsyx8jp8"; // Package address
+let packageAddress = "package_tdx_a_1q8venlt3ah23jl5aleuxjh6txfmy2cjj3cncdmf05h4q0awj4a"; // Package address
 
 // Copy function
 document.getElementById('idaddress').onclick = async function() {
