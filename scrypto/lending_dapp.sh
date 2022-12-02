@@ -1,4 +1,4 @@
-# set -e
+set -e
 
 export xrd=resource_sim1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzqu57yag
 
