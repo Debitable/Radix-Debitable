@@ -33,7 +33,7 @@ struct BorrowingTicket {
 }
 
 blueprint! {
-    #[derive(Debug)]
+    // #[derive(Debug)]
     struct LendingApp {
         /// The resource definition of LOAN token.
         loan_resource_def: ResourceAddress,
@@ -157,7 +157,13 @@ blueprint! {
             let loan_allocated = Vec::new();
 
             info!("Loan pool size is: {}", start_amount);
+            // info!("Main pool size is: {}", starting_tokens);
             info!("Main pool size is: {}", starting_tokens.amount());
+            
+            // let starting_tokens_bucket = ResourceBuilder::new_fungible()
+            //     .metadata("symbol", "AC")
+            //     .metadata("name", "Aggie Coin")
+            //     .initial_supply(starting_tokens);
 
             // Instantiate our LendingApp component
             let lendingapp = Self {
@@ -267,7 +273,12 @@ blueprint! {
             info!("Loan token received: {} ", reward);       
 
             // Get the data associated with the Lending NFT and update the variable values
-            let non_fungible: NonFungible<LendingTicket> = ticket.non_fungible();
+            let ticket : ValidatedProof = ticket.validate_proof(ProofValidationMode::ValidateContainsAmount(
+                self.lending_nft_resource_def,
+                dec!("1"),
+            ))
+            .expect("[Withdraw Funds]: Invalid badge resource address or amount");
+            let non_fungible: NonFungible<LendingTicket> = ticket.non_fungible::<LendingTicket>();
             let mut lending_nft_data = non_fungible.data();
             //check if no operation is already in place            
             assert!(!lending_nft_data.in_progress, "You already have a lend open!");
@@ -313,7 +324,15 @@ blueprint! {
             info!("Loan pool low limit is: {}" , pool_low_limit(self.start_amount, self.loan_pool_low_limit));
             
             // Get the data associated with the Lending NFT and update the variable values (in_progress=false)
-            let non_fungible: NonFungible<LendingTicket> = ticket.non_fungible();
+
+            let ticket : ValidatedProof = ticket.validate_proof(ProofValidationMode::ValidateContainsAmount(
+                self.lending_nft_resource_def,
+                dec!("1"),
+            ))
+            .expect("[Withdraw Funds]: Invalid badge resource address or amount");
+            let non_fungible: NonFungible<LendingTicket> = ticket.non_fungible::<LendingTicket>();
+
+            // let non_fungible: NonFungible<LendingTicket> = ticket.non_fungible();
             let mut lending_nft_data = non_fungible.data();
             //check if no operation is already in place            
             assert!(lending_nft_data.in_progress, "You have not a lend open!");
@@ -372,7 +391,15 @@ blueprint! {
             info!("Main pool size is: {}", self.main_pool.amount());
 
             // Get the data associated with the Borrowing NFT and update the variable values (in_progress=false)
-            let non_fungible: NonFungible<BorrowingTicket> = ticket.non_fungible();
+
+            let ticket : ValidatedProof = ticket.validate_proof(ProofValidationMode::ValidateContainsAmount(
+                self.borrowing_nft_resource_def,
+                dec!("1"),
+            ))
+            .expect("[Withdraw Funds]: Invalid badge resource address or amount");
+            let non_fungible: NonFungible<BorrowingTicket> = ticket.non_fungible::<BorrowingTicket>();
+
+            // let non_fungible: NonFungible<BorrowingTicket> = ticket.non_fungible();
             let mut borrowing_nft_data = non_fungible.data();
             //check if no operation is already in place            
             assert!(!borrowing_nft_data.in_progress, "You have a borrow open!");
@@ -435,7 +462,14 @@ blueprint! {
             info!("Loan pool size is: {}", self.loan_pool.amount());
             info!("Main pool size is: {}", self.main_pool.amount());                
             // Get the data associated with the Borrowing NFT and update the variable values (in_progress=false)
-            let non_fungible: NonFungible<BorrowingTicket> = ticket.new_non_fungible();
+
+            let ticket : ValidatedProof = ticket.validate_proof(ProofValidationMode::ValidateContainsAmount(
+                self.borrowing_nft_resource_def,
+                dec!("1"),
+            ))
+            .expect("[Withdraw Funds]: Invalid badge resource address or amount");
+            let non_fungible: NonFungible<BorrowingTicket> = ticket.non_fungible::<BorrowingTicket>();
+            // let non_fungible: NonFungible<BorrowingTicket> = ticket.new_non_fungible();
             let mut borrowing_nft_data = non_fungible.data();
             //check if no operation is in place            
             assert!(borrowing_nft_data.in_progress, "You have not a borrow open!");
