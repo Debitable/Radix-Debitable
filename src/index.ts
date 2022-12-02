@@ -33,8 +33,6 @@ document.getElementById('authenticate').onclick = async function () {
   const result = await sdk.request({
     accountAddresses: {},
   })
-  console.log("Manju")
-  console.log(result)
 
   if (result.isErr()) {
     throw result.error
