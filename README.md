@@ -20,11 +20,6 @@ Radix implementation of <b>Debitable</b> using the [Alphanet Javascript SDK](htt
 - Deposit AggieCoins
 
 **Pending**:
-- [ ] Transaction history
-- [ ] Improved Sign-out
-- [ ] Pagination for transactions
-- [ ] Borrowing and lending features
-- [ ] Detailed testing and bug-fixes
 
 ## Pre-requisites
 1. Node >= 12.17.0
