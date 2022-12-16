@@ -206,6 +206,31 @@ document.getElementById('withdraw').onclick = async function () {
     v0CommittedTransactionRequest: { intent_hash: hash.value },
   })
 
+  let history_hash = receipt.committed.notarized_transaction.hash;
+
+  let date_ob = new Date();
+  // current hours
+  let hours = date_ob.getHours();
+  // current minutes
+  let minutes = date_ob.getMinutes();
+  // current seconds
+  let seconds = date_ob.getSeconds();
+
+  let prep = `<li>
+  <div class="payment-card">
+    <div class="hour">${hours}:${minutes}:${seconds}</div>
+    <div class="price negative">-${amount} AC</div>
+    <div class="token" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+      ${history_hash}
+    </div>
+    <div class="score blue">•••</div>
+    </div>
+  </li>`
+
+  $("#history").prepend(prep);
+
+  $("#amount").val("");
+
   // Get Bank and Cash balance with a pinch of regex magic
   const withdraw_bank_account_balance = receipt.committed.receipt.output[1].data_json.elements[0].value.match(/\((.*)\)/).pop().slice(1, -1)
   const withdraw_cash_balance = receipt.committed.receipt.output[1].data_json.elements[1].value.match(/\((.*)\)/).pop().slice(1, -1)
@@ -235,6 +260,31 @@ document.getElementById('deposit').onclick = async function () {
   const receipt = await transactionApi.transactionReceiptPost({
     v0CommittedTransactionRequest: { intent_hash: hash.value },
   })
+
+  let history_hash = receipt.committed.notarized_transaction.hash;
+
+  let date_ob = new Date();
+  // current hours
+  let hours = date_ob.getHours();
+  // current minutes
+  let minutes = date_ob.getMinutes();
+  // current seconds
+  let seconds = date_ob.getSeconds();
+
+  let prep = `<li>
+  <div class="payment-card">
+    <div class="hour">${hours}:${minutes}:${seconds}</div>
+    <div class="price positive">+${amount} AC</div>
+    <div class="token" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+      ${history_hash}
+    </div>
+    <div class="score blue">•••</div>
+    </div>
+  </li>`
+
+  $("#history").prepend(prep);
+
+  $("#amount").val("");
 
   // Get Bank and Cash balance with a pinch of regex magic
   const deposit_bank_account_balance = receipt.committed.receipt.output[1].data_json.elements[0].value.match(/\((.*)\)/).pop().slice(1, -1)

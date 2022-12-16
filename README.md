@@ -18,11 +18,10 @@ Radix implementation of <b>Debitable</b> using the [Alphanet Javascript SDK](htt
 - Identification Address based transfer and authentication
 - Withdraw AggieCoins
 - Deposit AggieCoins
+- Transaction History
 
 **Pending**:
-- [ ] Transaction history
-- [ ] Improved Sign-out
-- [ ] Pagination for transactions
+- [ ] Improved Sign-out using state management
 - [ ] Borrowing and lending features
 - [ ] Detailed testing and bug-fixes
 
